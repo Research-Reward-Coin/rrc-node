@@ -1,4 +1,5 @@
 
+
 <p align="center">
     <img src="https://rawgit.com/usnistgov/corr/master/corr-view/frontend/images/logo.svg"
          height="240"
@@ -20,12 +21,10 @@ trust in the scientist words for it. While one is not void of mistakes, it is sa
 see that there is more and more intentional fabricated results.
 Instead of waiting for years to witness numerous failures in repeating, reproducing
 or even replicating findings, we think that smart contracts are the right technology
-to speed up the process of corroboration. Instead of wasting your time to create the environment to run and later check the findings
-we propose a solution that requires only computational resources (machines).
+to speed up the process of corroboration. Instead of wasting your time to create the environment to run and later check the findings we propose a solution that requires only computational resources (machines).
 As any viable cryptocurrency out there, we propose to fuel the whole infrastructure with reward incentives. This means that every time a machine corroborate a finding, if it is validated, its owner will receive some rewards: RRC (Research Reward Coin).
 Although, The RRC is initially void of pecuniary value, we have a plan to induce it.
-This is research and it has to generate incentives for grants and donations. And since
-reproducibility is growing to prove fundamental in the eyes of everyone,
+This is research and it has to generate incentives for grants and donations. And since reproducibility is growing to prove fundamental in the eyes of everyone,
 we think money to support such initiatives will derive intrinsically. We hope.
 Alternatively, researchers worried about the free fall of trust in computational science will feel more confident in providing rewards to confirm that their findings are in fact as they say repeatable, reproducible and replicable.
 
@@ -60,7 +59,7 @@ To test that your installation worked you should be able to run:
 	$   owner
 	$   unlock
 	$   version
-  $   digest
+	$   digest
 
 Each of these commands also come with specific help details when called with --help.
 For example:
@@ -78,8 +77,7 @@ For example:
 	$  --help                Show this message and exit.
 
 In the following we will explain how to setup and configure the RRC node locally.
-The current version does not allow network based connection. This work has to come
-at a later time. The network based connection needs [CoRR](https://github.com/usnistgov/corr).
+The current version does not allow network based connection. This work has to come at a later time. The network based connection needs [CoRR](https://github.com/usnistgov/corr).
 
 ### Setup the node owner
 
@@ -141,9 +139,7 @@ Such parameters are the node identifier and its RSA key pair.
 	$ 2018-xx-xx xx:xx:15 RRC Storing >> Node accessing database...
 	$ 2018-xx-xx xx:xx:15 RRC Storing >> Node releasing database...
 
-A this point, your localhost rrc-node is ready to be launched.
-In this example it took us an overall 15 seconds to  achieve this.
-To continue, you will need to terminals.
+A this point, your localhost rrc-node is ready to be launched. In this example it took us an overall 15 seconds to  achieve this. To continue, you will need to terminals.
 The first one will be showing the node running and the second will allow us to send requests to it in localhost.
 In the first terminal, to launch the node, run:
 
@@ -185,9 +181,7 @@ It contains:
  - [precision-3](example/precision-3.zip): A compressed folder containing the precision of 30 decimals.
  - [precision-4](example/precision-4.zip): A compressed folder containing the precision of 40 decimals.
 
-Each ***compute.py*** code in ***pi*** and ***pi-2*** reads in the precision from one the previous compressed
-options. Each of the two computations of pi, has a precision and a computed folder that allows the reader to
-quickly test the code. Thus clearing all the questions you might have. These computations also comes with
+Each ***compute.py*** code in ***pi*** and ***pi-2*** reads in the precision from one the previous compressed options. Each of the two computations of pi, has a precision and a computed folder that allows the reader to quickly test the code. Thus clearing all the questions you might have. These computations also comes with
 ***Dockerfiles*** which were used to build the two conatainers used in this use case:
 
  - [The pi container](https://hub.docker.com/r/palingwende/pi/)
@@ -204,19 +198,12 @@ First let's list them:
   - [contract-repeatable.yaml](example/contract-repeatable.yaml): A smart contract to confirm that
   the running [the pi container](https://hub.docker.com/r/palingwende/pi/) twice with [precision](example/precision.zip)
   produces the same outcome. This also was verified for any ***precision***.
-  - [contract-reproducible.yaml](example/contract-reproducible.yaml): A smart contract to confirm that
-  running [the pi container](https://hub.docker.com/r/palingwende/pi/) will always produce a ***pi*** file in
-  the ***computed*** folder with a digest that matches ***d42997e6d918a969ee2addbc99cd46d447813e977e5c31d201a9b871f8a9d2d6***.
-  - [contract-replicable.yaml](example/contract-replicable.yaml): A smart contract to confirm that
-  running [the pi-2 container](https://hub.docker.com/r/palingwende/pi/) with [precision-2](example/precision.zip)
-  produces the same outcome as [the pi container](https://hub.docker.com/r/palingwende/pi/) with the same ***precision***.
-  This proves that ***computation pi-2*** replicates ***computation pi*** at ***precision-2*** which is ***20***.
-  - [contract-rejected.yaml](example/contract-rejected.yaml): A smart contract that shows that the same
-  ***computation pi-2*** does not replicate ***computation pi*** at ***precision-1*** which is ***10***.
+  - [contract-reproducible.yaml](example/contract-reproducible.yaml): A smart contract to confirm that running [the pi container](https://hub.docker.com/r/palingwende/pi/) will always produce a ***pi*** file in the ***computed*** folder with a digest that matches ***d42997e6d918a969ee2addbc99cd46d447813e977e5c31d201a9b871f8a9d2d6***.
+  - [contract-replicable.yaml](example/contract-replicable.yaml): A smart contract to confirm that running [the pi-2 container](https://hub.docker.com/r/palingwende/pi/) with [precision-2](example/precision.zip) produces the same outcome as [the pi container](https://hub.docker.com/r/palingwende/pi/) with the same ***precision***. This proves that ***computation pi-2*** replicates ***computation pi*** at ***precision-2*** which is ***20***.
+  - [contract-rejected.yaml](example/contract-rejected.yaml): A smart contract that shows that the same ***computation pi-2*** does not replicate ***computation pi*** at ***precision-1*** which is ***10***.
 
 We encourage you to take a look at each one of them to be acknowledged with the
-terminology. We have done our best in commenting the contracts. We encourage you
-to try making your own contracts to run your own container codes.
+terminology. We have done our best in commenting the contracts. We encourage you to try making your own contracts to run your own container codes.
 Caution: You must ajust certain fields before running the contracts to avoid failures:
 
  - location: Based on where you clone the repo, replace the path/to section in inputs.
@@ -290,16 +277,14 @@ the contract in the node queu. by typing:
 
 	  $ rrc contract --queu
 
-This contract will be cleared from the queu shortly after the last postexecuting sequence
-around xx:xx:55. The same command should return an empty queu.
+This contract will be cleared from the queu shortly after the last postexecuting sequence around xx:xx:55. The same command should return an empty queu.
 If you missed it in the queu, don't worry, contracts are permently stored. Run the following:
 
 	  $ rrc contract
 
 You will retrieve a list of contract containing the contract you have ran.
 A good sign of the contract leaving the queu is the apperance of a new block.
-Since this will be your first contract (we assume an bare node), the subsequent block
-will be the ***genesis block***. To view the last block of the chain run:
+Since this will be your first contract (we assume an bare node), the subsequent block will be the ***genesis block***. To view the last block of the chain run:
 
 	$ rrc block
 	$ 2018-03-17 23:41:05 RRC Networking >> Fetching the RRC network public key...
@@ -371,11 +356,7 @@ By running ***contract-reproducible.yaml*** this time, we have the following blo
 	     }
 	 }
 
-By comparing the two previous blocks, one is forced to witness that while the first is
-a genesis block, with a previous hash to null and the reward of 57. RRC, the second
-has its previous hash being the one of the first and a reward of 35.0. It is important to
-notice the nodes section. Both blocks have a confirmation for the current node for the two
-contracts.
+By comparing the two previous blocks, one is forced to witness that while the first is a genesis block, with a previous hash to null and the reward of 57. RRC, the second has its previous hash being the one of the first and a reward of 35.0. It is important to notice the nodes section. Both blocks have a confirmation for the current node for the two contracts.
 Now to obviously check how much reward this node made so far we run:
 
 	  $  rrc node --summary
@@ -416,69 +397,32 @@ You can concur with me that ***57.0 + 35.0*** makes a total of ***92.0*** RRC.
 
 ### Is pi-2 replicating pi?
 
-To run the two replicate contract requests ***contract-replicable*** and ***contract-rejected***,
-you must have a previous contract id to reference to for the outputs.
-For this reason we recommend that you run a repeatable contract first then use the contract id to
-update the any of the two replicate ones.
+To run the two replicate contract requests ***contract-replicable*** and ***contract-rejected***, you must have a previous contract id to reference to for the outputs.
+For this reason we recommend that you run a repeatable contract first then use the contract id to update the any of the two replicate ones.
 For example to run the ***contract-replicable*** you must:
 
-  $ edit ***contract-repeatable*** inputs section.
-  $ replace ***precision.zip*** by ***precision-2.zip***.
-  $ replace the value in digest with: 83048598f51116a035456c500b2718e73b8fa6237ceedff3068043e4997bbc96
-  $ rrc contract --submit /path/to/rrc-node/example/contract-repeatable.yaml
-  $ ...
-  $ xxxx-xx-xx xx:xx:xx RRC Computing >> Requesting the computation of contract [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx].
-  $ ...
-  $ copy xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  $ edit ***contract-replicable*** outputs section.
-  $ replace id_of_the_contract_replicated with xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  $ rrc contract --submit /path/to/rrc-node/example/contract-replicable.yaml
-  $ then check the block when the contract is computed.
-  $ rrc block
-  $ You should have a replicate block added, confirmed and an increase of 40 RRC in the node rewards.
-  $ rrc node --summary
+	  $ edit ***contract-repeatable*** inputs section.
+	  $ replace ***precision.zip*** by ***precision-2.zip***.
+	  $ replace the value in digest with: 83048598f51116a035456c500b2718e73b8fa6237ceedff3068043e4997bbc96
+	  $ rrc contract --submit /path/to/rrc-node/example/contract-repeatable.yaml
+	  $ ...
+	  $ xxxx-xx-xx xx:xx:xx RRC Computing >> Requesting the computation of contract [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx].
+	  $ ...
+	  $ copy xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	  $ edit ***contract-replicable*** outputs section.
+	  $ replace id_of_the_contract_replicated with xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	  $ rrc contract --submit /path/to/rrc-node/example/contract-replicable.yaml
+	  $ then check the block when the contract is computed.
+	  $ rrc block
+	  $ You should have a replicate block added, confirmed and an increase of 40 RRC in the node rewards.
+	  $ rrc node --summary
 
-The same process applies for ***contract-rejected*** except that the submited contract will be rejected since
-***pi*** and ***pi-2*** do not produce the same results for ***precision 10***. In any case for localhost, the node
-is always paid for its efforts.
-We have to note that for the network version a block rejecting a contract execution does not mean reward.
-The rewards on the network are based on the majority response. If the majority of nodes reject the contract,
-then they will get the rewards while the minority won't.  These complexities as you can imagine have a delay
-impact in the expected robust design of the network version.
+The same process applies for ***contract-rejected*** except that the submited contract will be rejected since ***pi*** and ***pi-2*** do not produce the same results for ***precision 10***. In any case for localhost, the node is always paid for its efforts.
+We have to note that for the network version a block rejecting a contract execution does not mean reward. The rewards on the network are based on the majority response. If the majority of nodes reject the contract, then they will get the rewards while the minority won't.  These complexities as you can imagine have a delay impact in the expected robust design of the network version.
 
 #### Overview of a RRC block
 
 The RRC network generate a blockchain that has the following structure for a block:
-
-{
-    "contract": {
-        "container": "9d9785de14f8dfa7bccab81b56aaa816517125fd6a8e7ba5485d81422b3cfbc8",
-        "id": "72ffbd1c31b36ebb75a9ff0cddbac02a0e9c2994ea632ecb0713e19d64702849",
-        "inputs": "4a1d014c12a83283ecf3cd3d685bf9bd7cc94c6a58af46237dd5c08f9b85d927",
-        "outputs": {
-            "computed/pi": "d42997e6d918a969ee2addbc99cd46d447813e977e5c31d201a9b871f8a9d2d6"
-        },
-        "scope": "repeatable"
-    },
-    "genesis": true,
-    "hash": "3f2d8f883817fd789d3f82dea37d6319e7717b4e606c59c94168edd99fca3988",
-    "last": true,
-    "nodes": {
-        "af471328fad0b5f33da62485f3e1a3177a31a03da51f3c827a20715edee9caf1": "confirmed"
-    },
-    "previous": null,
-    "reward": 57.0,
-    "status": "hooked",
-    "timestamps": {
-        "chained": "xxxx-xx-xx xx:xx:xx",
-        "created": "2018-03-17 23:13:30",
-        "hooked": "2018-03-17 23:13:30",
-        "validated": "2018-03-17 23:13:30"
-    }
-}
-$ 2018-xx-xx xx:xx:xx RRC Storing >> Node releasing database...
-
-By running ***contract-reproducible.yaml*** this time, we have the following block:
 
     {
         "contract": { <--- The section concerning the RRC contract.
@@ -509,17 +453,11 @@ By running ***contract-reproducible.yaml*** this time, we have the following blo
 
 To have a broader sense of what a contract is in RRC please review the provide example contract of computing Pi.
 The hash of a block is the SHA256 of the previous block hash and the contract content.
-A block status starts as ***created*** when the contract enter the postexecuting state, then when the result is validated as
-confirmed or rejected, the status moves to ***validated*** and finally when the new its hash is computed from the previous hash,
-it is ***hooked***. When a new block is added to the latest block, the field latest goes to false and the status moves to
-***chained*** meaning that the block has a previous and a next.
+A block status starts as ***created*** when the contract enter the postexecuting state, then when the result is validated as confirmed or rejected, the status moves to ***validated*** and finally when the new its hash is computed from the previous hash, it is ***hooked***. When a new block is added to the latest block, the field latest goes to false and the status moves to ***chained*** meaning that the block has a previous and a next.
 The genesis block is the only one that has a previous to null.
 Why Pi? Because we intend to use the repeatable contract computation as the genesis block for the network RRC deployment.
 
 Beware: We are still working on a solid test suite. So if you encounter any issue please email me at faical.congo@nist.gov or
 yannick.congo@gmail.com. I will try to assess your issues as quick as possible.
-Another note is that this code is on research state. It is a proof of concept that a permissioned blockchain based smart contract
-is an actual thing that can be used as an alternative to drive incentives into more corroboration in computational findings.
-We have not addressed the question of rating here. But a biproduct of such as system is that researcher are accountable based
-on a rating that grows good the more corroboration they have on their finding and worse the less corroboration they have based
-on the number of paper they publish.
+Another note is that this code is on research state. It is a proof of concept that a permissioned blockchain based smart contract is an actual thing that can be used as an alternative to drive incentives into more corroboration in computational findings.
+We have not addressed the question of rating here. But a biproduct of such as system is that researcher are accountable based on a rating that grows good the more corroboration they have on their finding and worse the less corroboration they have based on the number of paper they publish.
