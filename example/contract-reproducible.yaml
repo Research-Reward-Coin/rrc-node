@@ -38,7 +38,7 @@ container:
 # It is the SHA-256.
 inputs: # Readonly
   volume: /precision
-  location: /path/to/rrc-node/examples/precision.zip
+  location: /path/to/rrc-node/example/precision.zip
   digest: 4a1d014c12a83283ecf3cd3d685bf9bd7cc94c6a58af46237dd5c08f9b85d927
 
 # List of output folders: writeonly.

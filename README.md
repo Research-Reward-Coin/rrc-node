@@ -439,8 +439,9 @@ For example to run the ***contract-replicable*** you must:
   $ rrc node --summary
 
 The same process applies for ***contract-rejected*** except that the submited contract will be rejected since
-***pi*** and ***pi-2*** do not produce the same results for ***precision 10***. So no rewards.
-We have to note that for the network version a block rejecting a contract execution does not mean no reward.
+***pi*** and ***pi-2*** do not produce the same results for ***precision 10***. In any case for localhost, the node
+is always paid for its efforts.
+We have to note that for the network version a block rejecting a contract execution does not mean reward.
 The rewards on the network are based on the majority response. If the majority of nodes reject the contract,
 then they will get the rewards while the minority won't.  These complexities as you can imagine have a delay
 impact in the expected robust design of the network version.
