@@ -1,0 +1,73 @@
+# The version of the contract.
+# Caution with this.
+# Your node version must be at least the same or greater version.
+# A node version 0.2 cannot run a contract with version 0.3.
+version: 0.1
+# The contract id.
+# This gets overwriden on local host to avoid collisions.
+# On network mode, the node trust the moderating service to provide it.
+id: ccab81b56aaa816517125fd6a8e7ba34
+
+# The id of the user that submitted the contract.
+# This id might reflect the one attached to the user CoRR account.
+# Do not worry about this on localhost.
+user: 4c12a83283ecf3cd3d685bf9bd7cc94c
+
+# The contract status should be unknown when served to the node.
+# It is for the node to update during its progress.
+status: unknown
+
+# The container on docker hub that wraps the pi code that we have here.
+# The hash of its image is provided as the digest.
+# It is the SHA-256.
+container:
+  repository: palingwende/pi
+  digest: 9d9785de14f8dfa7bccab81b56aaa816517125fd6a8e7ba5485d81422b3cfbc8
+
+# The scientist have to be aware of a contraint regarding using the volumes.
+# The inputs are readonly and the outputs are writeonly.
+# This allows an increase in security.
+# So writting the code to be aware of this is important.
+# Finally, this volumes are provided as temporary folders in /tmp.
+# They will be pruge after a reboot of the machine.
+
+# List of input folders: Readonly.
+# Recommend have only one volume with all the inputs files and folders in there.
+# The input folder must be provided as a zip file.
+# The hash of the zip file must also be provided as a digest.
+# It is the SHA-256.
+inputs: # Readonly
+  volume: /precision
+  location: /path/to/rrc-node/example/contracts/precision-16.zip
+  digest: 36258ebb1f3b0937b59eb6c986cb8b7708ee37b41cbcb86e322c452128d7f21a
+
+# List of output folders: writeonly.
+# Same as for inputs, we recommand using a single folder path to store all
+# the outputs of the code in the container.
+outputs:
+  volume: /computed
+
+# Reproducbility assessment statement.
+# The scope is the request reproducibility challenge.
+# Here it is for repeatable.
+# The contract is for confirming that the container is producing the same
+# outputs when ran with the same inputs.
+assess:
+  scope: repeatable
+  outputs:
+      computed/pi:
+
+# The reward for a valid confirmation of this contract.
+reward: 57
+
+# Require a machine with gpu activated and accessible.
+gpu: False
+
+# Inform about the bounds of the code submitted.
+# Will be used in the future to optimize the algorithm
+# that elect the corroborating nodes.
+bounds: # Limits
+  memory: False
+  bandwith: False
+  cpu: False
+  gpu: False

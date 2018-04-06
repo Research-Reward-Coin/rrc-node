@@ -455,7 +455,22 @@ To have a broader sense of what a contract is in RRC please review the provide e
 The hash of a block is the SHA256 of the previous block hash and the contract content.
 A block status starts as ***created*** when the contract enter the postexecuting state, then when the result is validated as confirmed or rejected, the status moves to ***validated*** and finally when the new its hash is computed from the previous hash, it is ***hooked***. When a new block is added to the latest block, the field latest goes to false and the status moves to ***chained*** meaning that the block has a previous and a next.
 The genesis block is the only one that has a previous to null.
-Why Pi? Because we intend to use the repeatable contract computation as the genesis block for the network RRC deployment.
+Why Pi? Because we intend to use the repeatable contract computation as the genesis block for the network RRC deployment. A video has been made available detailing how this software is used [RRC-Node Tutorial](https://www.youtube.com/watch?v=M9cdsbt6Zrc&t=941s).
+
+#### Campaign in the paper
+
+The following code is a proof of concept of a paper under publication.
+To run the campaign experiment to compare pi and pi-2 please go to folder ***example/contracts***
+It contains all the inputs for running the campaign which are ***precision-X.zip***.
+It also contains contracts organized in three folders: ***repeatable***, ***reproducible*** and ***replicable***.
+Each folder contains for pi and pi-2, a contract for a decimal of Pi between 3 and 20.
+Only replicable contains the contracts of pi-2 being considered as a replicate of pi for different decimals.
+Before running the campaign you must replace ***/path/to/rrc-node/*** with the one in your system.
+In my local one for example, it's: ***/Users/fyc/Research-Reward-Coin/rrc-node/***. If you have an error
+related to origin being an unknown key. You must clean the node local storage and restart. So, I greatly
+advice following the proper way of using the software. More unit tests are being conduct to strengthen the
+software regarding error handling mostly. For more details into the campaign, refer to the paper.
+
 
 Beware: We are still working on a solid test suite. So if you encounter any issue please email me at faical.congo@nist.gov or
 yannick.congo@gmail.com. I will try to assess your issues as quick as possible.
